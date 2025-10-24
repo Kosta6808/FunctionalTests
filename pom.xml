@@ -8,8 +8,8 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <artifactId>SeleniumJavaExample</artifactId>
     <version>1.0-SNAPSHOT</version>
     <properties>
-        <maven.compiler.source>25</maven.compiler.source>
-        <maven.compiler.target>25</maven.compiler.target>
+        <maven.compiler.source>15</maven.compiler.source>
+        <maven.compiler.target>15</maven.compiler.target>
     </properties>
     <dependencies>
         <dependency>
