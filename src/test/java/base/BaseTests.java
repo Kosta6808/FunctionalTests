@@ -18,26 +18,26 @@ public class BaseTests {
     protected WebDriver driver;
     @BeforeMethod
     public void setUp(){
-        System.setProperty("webdriver.gecko.driver",
-                "src/main/resources/geckodriver.exe");
-        driver = new FirefoxDriver();
+        System.setProperty("webdriver.chrome.driver",
+                "src/main/resources/chromedriver.exe");
+        driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.get("http://localhost:8080/");
+        driver.get("https://iytnet.com/");
     }
 
     @AfterMethod
-    public void teardown(ITestResult result){
-        if(ITestResult.FAILURE == result.getStatus()) {
-            var camera = (TakesScreenshot) driver;
-            File screenshot = camera.getScreenshotAs(OutputType.FILE);
-            try {
-                Files.move(screenshot,
-                        new File("src/main/resources/screenshots/" +
-                                result.getName() + ".png"));
-            } catch (IOException e) {
-                e.printStackTrace();
+        public void teardown(ITestResult result){
+            if(ITestResult.FAILURE == result.getStatus()) {
+                var camera = (TakesScreenshot) driver;
+                File screenshot = camera.getScreenshotAs(OutputType.FILE);
+                try {
+                    Files.move(screenshot,
+                            new File("src/main/resources/screenshots/" +
+                                    result.getName() + ".png"));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
-        }
         driver.quit();
     }
 }

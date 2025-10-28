@@ -9,7 +9,7 @@ public class LoginTest extends BaseTests {
     @Test
     public void verifySuccessfulLogin(){
         LoginPage loginPage = new LoginPage(driver);
-        assertEquals(loginPage.login("Kosta6808", "9411f34530fb4278991f71178976eca9").getTitle(),
-                "http://localhost:8080/");
+        assertEquals(loginPage.login("102945", "jtuxbzwh").getTitle(),
+                "https://iytnet.com/");
     }
 }
