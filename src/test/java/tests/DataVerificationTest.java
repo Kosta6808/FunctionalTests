@@ -12,7 +12,7 @@ public class DataVerificationTest {
     public void initiateConnection() throws SQLException {
         connection = DriverManager.getConnection(
                 "jdbc:postgresql://localhost/postgres",
-                "Kosta6808", "QWEdsa!1234");
+                "user", "password");
     }
     public void executeQuery(String query) throws SQLException {
         initiateConnection();
