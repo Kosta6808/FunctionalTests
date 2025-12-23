@@ -1,20 +1,25 @@
 // LoginPage.java
 package pages;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
+
 public class LoginPage {
-    private WebDriver driver;
-    private By emailID = By.id("user_email");
-    private By passwordField = By.id("user_password");
-    private By signInButton =
-            By.cssSelector("input.gr-button.gr-button--large");
-    public LoginPage(WebDriver driver) {
+    private final WebDriver driver;
+    private final By emailID = By.cssSelector("#mod_login_username");
+    private final By passwordField = By.cssSelector("#mod_login_password");
+    private final By signInButton = By.cssSelector("input.button");
+
+    public LoginPage(WebDriver driver)
+    {
         this.driver = driver;
     }
-    public HomePage login(String email, String password){
+    public void login(String email, String password)
+    {
         driver.findElement(emailID).sendKeys(email);
         driver.findElement(passwordField).sendKeys(password);
         driver.findElement(signInButton).click();
-        return new HomePage(driver);
     }
 }
+//#login-form>fieldset>div>span>
