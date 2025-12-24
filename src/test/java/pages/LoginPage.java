@@ -22,4 +22,3 @@ public class LoginPage {
         driver.findElement(signInButton).click();
     }
 }
-//#login-form>fieldset>div>span>
